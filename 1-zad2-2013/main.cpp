@@ -13,5 +13,10 @@ int main()
     //    a.b();                                                     // 6 nie ma takiej funkcji w A
    //     b.a();                                                     // 7 funkcja nie jest const
         b.s();                                                     // 8 dzia³a, bo jest static
-  //      b.b();                                                     // 9 funkcja nie jest const
+        /*
+         * [13:13] <advisor_> b to referencja na A
+			[13:14] <advisor_> wiêc nie ma dostêpu do B
+			[13:14] <advisor_> a nie bo nie jest const
+         */
+        b.b();
 }
