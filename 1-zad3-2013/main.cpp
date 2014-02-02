@@ -16,14 +16,18 @@ template <typename T=int> struct box{
 };
 
 template <typename T, int S=2> struct array{
-        mutable vector<T> v;
+        vector<T> v;
+        mutable T dumm;
         array( const array<T,2> &in){
                 v=in.v;
         }
         array(){
                 v = vector<T>(S);
         }
-        T &operator[](int i) const {
+        T &operator[](int i )const{
+        	return dumm;
+        }
+        T &operator[](int i){
                 return v[i];
         }
         operator const array<T>(){
