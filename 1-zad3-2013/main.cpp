@@ -17,7 +17,6 @@ template <typename T=int> struct box{
 
 template <typename T, int S=2> struct array{
         vector<T> v;
-        mutable T dumm;
         array( const array<T,2> &in){
                 v=in.v;
         }
@@ -25,7 +24,8 @@ template <typename T, int S=2> struct array{
                 v = vector<T>(S);
         }
         T &operator[](int i )const{
-        	return dumm;
+        	T temp = v[i];
+        	return temp;
         }
         T &operator[](int i){
                 return v[i];
@@ -42,4 +42,5 @@ int main(){
         double i = a[0]=a[1]=1;
         const array<box<int> > b= a;
         b[0] = b[1] = 2;
+        std::cout<<b[0]<<std::endl;
 }
